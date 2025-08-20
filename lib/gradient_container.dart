@@ -5,14 +5,16 @@ final startAlignment = Alignment.topLeft;
 final endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer({super.key, required this.colors});
+
+  final List<Color> colors;
 
   @override
   Widget build(context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: const [Color.fromARGB(255, 46, 16, 98), Colors.deepOrange],
+          colors: colors,
           begin: startAlignment,
           end: endAlignment,
         ),
